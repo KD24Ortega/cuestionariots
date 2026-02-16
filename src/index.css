@@ -1,0 +1,38 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.quiz-prewrap {
+  white-space: pre-wrap;
+}
+
+.marketing-hero {
+  color: var(--bs-white);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--bs-primary-rgb), 1) 0%,
+    rgba(var(--bs-dark-rgb), 1) 100%
+  );
+}
+
+.pwa-toast {
+  max-width: min(420px, calc(100vw - 2rem));
+}
+
+.pwa-toast__card {
+  transition: opacity 350ms ease, transform 350ms ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pwa-toast__card--hidden {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
