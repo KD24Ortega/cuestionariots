@@ -37,6 +37,8 @@ export function QuizScreen({
   onFinalize,
   onMenu
 }: Props) {
+  const isLast = idx + 1 >= total;
+
   return (
     <div className="card shadow-sm">
       <div className="card-body">
@@ -134,12 +136,15 @@ export function QuizScreen({
                 <button className="btn btn-outline-primary" onClick={onPrev} disabled={idx === 0}>
                   Anterior
                 </button>
-                <button className="btn btn-outline-primary" onClick={onNext} disabled={idx + 1 >= total}>
-                  Siguiente
-                </button>
-                <button className="btn btn-primary" onClick={onFinalize}>
-                  Finalizar
-                </button>
+                {isLast ? (
+                  <button className="btn btn-primary" onClick={onFinalize}>
+                    Finalizar
+                  </button>
+                ) : (
+                  <button className="btn btn-outline-primary" onClick={onNext}>
+                    Siguiente
+                  </button>
+                )}
               </div>
             </div>
             <div className="small text-body-secondary mt-2">
